@@ -21,6 +21,9 @@
 
 set -e
 
+ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+readonly SDK_VERSION=$(sed -n 's/^version:[[:space:]]*//p' "${ROOT_DIR}"/../ci/config/config.ini)
+
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 MERGE_BUILD_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
@@ -67,7 +70,7 @@ chmod +x build.sh
 if [[ "$1" == "test" ]]; then
     ./build.sh test || exit 1
 else
-    ./build.sh || exit 1
+    ./build.sh --version "${SDK_VERSION}" || exit 1
 fi
 
 PACKAGE_DIR="${MERGE_BUILD_DIR}/makeself"
