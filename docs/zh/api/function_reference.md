@@ -871,7 +871,7 @@ def load_audio(audio_inputs: Union[str, List[str]], sr: Optional[int] = None)
 >[!NOTE] 说明
 >-   输入音频仅支持wav文件。
 >-   可加载音频文件的范围为[1,128]。
->-   用户输入的采样率必须为正整数。
+>-   用户输入的采样率必须为[1,64000]范围内的正整数。
 >-   多通道音频会自动转换为单通道音频。
 
 **示例<a name="section1587174015349"></a>**
