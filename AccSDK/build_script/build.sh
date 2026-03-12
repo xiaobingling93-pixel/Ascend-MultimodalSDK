@@ -34,9 +34,6 @@ ACC_SDK_DIR="$SCRIPT_DIR_ACC_SDK"
 ACC_BUILD_SCRIPT=$(basename "$0")
 ACC_BUILD_TYPE=${1:-Release}
 
-chmod +x "${SCRIPT_DIR_ACC_SDK}/build_opensource.sh"
-. "${SCRIPT_DIR_ACC_SDK}/build_opensource.sh" || { echo "opensource compile failed"; exit 1; }
-
 chmod +x "${SCRIPT_DIR_ACC_SDK}/build_acc_data.sh"
 . "${SCRIPT_DIR_ACC_SDK}/build_acc_data.sh" || { echo "acc_data compile failed"; exit 1; }
 
