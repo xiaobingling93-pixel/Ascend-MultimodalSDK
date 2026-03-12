@@ -31,6 +31,14 @@ source /usr/local/Ascend/ascend-toolkit/set_env.sh
 export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:$LD_LIBRARY_PATH
 
 ACC_SDK_ROOT_DIR="${MERGE_BUILD_DIR}/AccSDK"
+cd "$ACC_SDK_ROOT_DIR" || { echo "Error: Cannot enter directory $ACC_SDK_ROOT_DIR"; exit 1; }
+
+if [ ! -f "opensource.tar.gz" ]; then
+    echo "Error: opensource.tar.gz file not found in $ACC_SDK_ROOT_DIR"
+    exit 1
+fi
+
+tar -zxvf opensource.tar.gz
 ACC_BUILD_DIR="${ACC_SDK_ROOT_DIR}/build_script"
 cd "$ACC_BUILD_DIR" || { echo "Error: Cannot enter directory $ACC_BUILD_DIR"; exit 1; }
 

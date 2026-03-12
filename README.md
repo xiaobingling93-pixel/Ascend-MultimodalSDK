@@ -122,11 +122,7 @@ Multimodal的版本说明包含Multimodal的软件版本配套关系和软件包
    ```bash
    # AccSDK依赖
    cd MultimodalSDK/AccSDK
-   mkdir -p opensource
-   cd opensource
-   git clone -b 3.1.0 https://gitcode.com/gh_mirrors/li/libjpeg-turbo.git
-   git clone -b n5.1.4 https://gitee.com/mirrors/ffmpeg.git FFmpeg
-   git clone https://atomgit.com/src-openeuler/soxr.git
+   weget https://mindcluster.obs.cn-north-4.myhuaweicloud.com/opensource.tar.gz
    # acc_data依赖
    cd MultimodalSDK/AccSDK/acc_data/3rdparty/pybind
    git clone -b v2.13.6 https://gitcode.com/GitHub_Trending/py/pybind11.git
